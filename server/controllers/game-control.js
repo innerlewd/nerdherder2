@@ -103,7 +103,7 @@ getGameById = async (req, res) => {
 }
 
 getGames = async (req, res) => {
-    await Game.find({}, (err, game) => {
+    await Game.find({}, (err, games) => {
         if (err) {
             return res.status(400).json({ success: false, error: err })
         }
