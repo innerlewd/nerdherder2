@@ -6,6 +6,7 @@ const Game = new Schema(
         name: { type: String, required: true },
         rating: { type: String, required: true },
         description: { type: String, required: true },
+        picLink: { type: String, required: false }
     },
     { timestamps: true },
 )
