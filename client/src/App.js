@@ -1,35 +1,27 @@
-import React from 'react';
-// import ReactDOM from 'react-dom';
-import Button from '@material-ui/core/Button';
-import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
-import { createMuiTheme } from "@material-ui/core/styles";
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Discover from "./pages/Discover";
+import About from "./pages/About";
+import Search from "./pages/Search";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Wrapper from "./components/Wrapper";
 
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      light: "#e8f5e9",
-      main: "#66bb6a",
-    },
-    secondary: {
-      light: "#fafafa",
-      main: "#DC143C",
-      dark: "#e0e0e0",
-    },
-  },
-});
-
-class App extends React.Component {
-  render() {
-    return (
-      <div name ='app'>
-        <MuiThemeProvider theme={theme}>
-      <Button variant="contained" color="primary">
-        Butt Stuff
-      </Button>
-      </MuiThemeProvider>
-      
+function App() {
+  return (
+    <Router>
+      <div>
+        <Navbar />
+        <Wrapper>
+          <Route exact path="/" component={About} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/discover" component={Discover} />
+          <Route exact path="/search" component={Search} />
+        </Wrapper>
+        <Footer />
       </div>
-    );
-  }
+    </Router>
+  );
 }
+
 export default App;
