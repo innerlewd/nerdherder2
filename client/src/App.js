@@ -6,6 +6,7 @@ import Search from "./pages/Search";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
+import { GamesList, UserInfo, Registration } from './pages/pages';
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
           <Route exact path="/about" component={About} />
           <Route exact path="/discover" component={Discover} />
           <Route exact path="/search" component={Search} />
+          <Route path='/register' component={Registration} />
+          <Route path='/user/:id' component={UserInfo} />
+          <Route path='/games' component={GamesList} />
         </Wrapper>
         <Footer />
       </div>
