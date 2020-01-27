@@ -18,7 +18,14 @@ const User = new Schema({
     validate: [isEmail, 'invalid email'],
     createIndexes: { unique: true },
   },
-  password: { type: String, required: true },
+  password: { 
+    type: String, 
+    required: true 
+  },
+  gamelist: {
+    type: Array,
+  }
+
 });
 
 User.pre('save', async function save(next) {
