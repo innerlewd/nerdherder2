@@ -20,7 +20,7 @@ function App() {
           <Route exact path="/search" component={Search} />
           <Route path='/register' component={Registration} />
           <Route path='/user/:id' component={UserInfo} />
-          <Route path='/games' component={GamesList} />
+          <Route path='/games/list' component={GamesList} />
         </Wrapper>
         <Footer />
       </div>

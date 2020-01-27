@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const axios = require('axios')
 const fs = require('fs')
-const client = require('../client/src/index')
+
 
 
 const db = require('./data/db')
@@ -19,9 +19,10 @@ app.use(bodyParser.json())
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
-app.get('/', (req, res) => {
-    fs.readFile('../client/src/index.js')
-})
+// app.get('/', (req, res) => {
+//     fs.readFile('../client/src/index.js')
+// })
+app.get('/')
 
 app.use('/api', gameRouter)
 app.use(userRouter)

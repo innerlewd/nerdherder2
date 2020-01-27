@@ -1,17 +1,10 @@
 import React, { Component } from 'react'
-import {
-    useTable,
-    useGroupBy,
-    useFilters,
-    useSortBy,
-    useExpanded,
-    usePagination,
-  } from 'react-table'
+import ReactTable from 'react-table-6'
 import api from '../utils/API'
 
 import styled from 'styled-components'
 
-//import 'react-table/react-table.css'
+import '../components/ReactTable/style.css'
 
 const Wrapper = styled.div`
     padding: 0 40px 40px 40px;
@@ -57,9 +50,8 @@ class GamesList extends Component {
                 filterable: true,
             },
             {
-                Header: 'Time',
-                accessor: 'time',
-                Cell: props => <span>{props.value.join(' / ')}</span>,
+                Header: 'Description',
+                accessor: 'description',
             },
         ]
 
@@ -71,7 +63,7 @@ class GamesList extends Component {
         return (
             <Wrapper>
                 {showTable && (
-                    <useTable
+                    <ReactTable
                         data={games}
                         columns={columns}
                         loading={isLoading}
