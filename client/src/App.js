@@ -6,7 +6,7 @@ import Search from "./pages/Search";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
-import { GamesList, UserInfo, Registration } from './pages/pages';
+import { GamesList, UserInfo, Registration, Login } from './pages/pages';
 
 function App() {
   return (
@@ -14,13 +14,14 @@ function App() {
       <div>
         <Navbar />
         <Wrapper>
-          <Route exact path="/" component={About} />
+          <Route exact path="/" component={Login} />
           <Route exact path="/about" component={About} />
           <Route exact path="/discover" component={Discover} />
           <Route exact path="/search" component={Search} />
-          <Route path='/register' component={Registration} />
           <Route path='/user/:id' component={UserInfo} />
+          <Route path='/register' component={Registration} />
           <Route path='/games/list' component={GamesList} />
+          <Route path='/logout' component={Login} />
         </Wrapper>
         <Footer />
       </div>
