@@ -1,16 +1,33 @@
 import axios from "axios";
 
+axios({
+  "method":"GET",
+  "url":"https://rawg-video-games-database.p.rapidapi.com/games",
+  "headers":{
+  "content-type":"application/octet-stream",
+  "x-rapidapi-host":"rawg-video-games-database.p.rapidapi.com",
+  "x-rapidapi-key":"43acb27062msh71014d2b6f89ea0p19fc0bjsn4d672d238f0f"
+  }
+  })
+  .then((response)=>{
+    console.log(response.data.results)
+  })
+  .catch((error)=>{
+    console.log(error)
+  })
+
+
 // Export an object containing methods we'll use for accessing the Dog.Ceo API
 
 export default {
   getRandomDog: function() {
-    return axios.get("https://www.giantbomb.com/api/game/[guid]/?api_key=8b5da22ef25cf5af94998d27556959ead8304c08&format=json&field_list=name,description");
+    return axios.get("");
   },
   getDogsOfBreed: function(breed) {
-    return axios.get("https://dog.ceo/api/breed/" + breed + "/images");
+    return axios.get("");
   },
   getBaseBreedsList: function() {
-    return axios.get("https://www.giantbomb.com/api/genres/?api_key=8b5da22ef25cf5af94998d27556959ead8304c08");
+    return axios.get("");
   }
 };
 
