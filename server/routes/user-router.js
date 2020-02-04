@@ -1,7 +1,7 @@
 
 const express = require('express')
 
-const UserCtrl = require('../controllers/user-control')
+// const UserCtrl = require('../controllers/user-control')
 
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
@@ -23,9 +23,9 @@ userRouter.post("/register", (req, res) => {
     if (!isValid) {
       return res.status(400).json(errors);
     }
-  User.findOne({ email: req.body.email }).then(user => {
+  User.findOne({ email: req.body.email, username: req.body.username }).then(user => {
       if (user) {
-        return res.status(400).json({ email: "Email already exists" });
+        return res.status(400).json({ emailOrUsername: "Email or Username already exists" });
       } else {
         const newUser = new User({
           username: req.body.username,
@@ -96,11 +96,25 @@ userRouter.post("/login", (req, res) => {
       });
     });
   });
+  getUsers = async (req, res) => {
+    await User.find({}, (err, users) => {
+        if (err) {
+            return res.status(400).json({ success: false, error: err})
+        }
+        if (!users.length) {
+            return res
+                .status(404)
+                .json({ success: false, error: 'user not found'})
+        }
+        return res.status(200).json({ success: true, data: users })
+    }).catch(err => console.log(err))
+}
 
-userRouter.post('/register', UserCtrl.createUser)
-userRouter.put('/user/:id', UserCtrl.updateUser)
-userRouter.delete('/user/:id', UserCtrl.deleteUser)
-userRouter.get('/user/:id', UserCtrl.getUserByID)
-userRouter.get('/users', UserCtrl.getUsers)
+
+// userRouter.post('/register', UserCtrl.createUser)
+// userRouter.put('/user/:id', UserCtrl.updateUser)
+// userRouter.delete('/user/:id', UserCtrl.deleteUser)
+// userRouter.get('/user/:id', UserCtrl.getUserByID)
+// userRouter.get('/users', UserCtrl.getUsers)
 
 module.exports = userRouter

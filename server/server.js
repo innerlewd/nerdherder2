@@ -30,6 +30,9 @@ mongoose
 // app.get('/', (req, res) => {
 //     fs.readFile('../client/src/index.js')
 // })
+
+
+
 app.get('/')
 
 app.get('/logout',function(req,res){    
