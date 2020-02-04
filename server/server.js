@@ -4,6 +4,7 @@ const cors = require('cors')
 const axios = require('axios')
 const fs = require('fs')
 const mongoose = require('mongoose')
+const passport = require('passport')
 
 
 
@@ -44,7 +45,12 @@ app.get('/logout',function(req,res){
 
 });  
 
+// Passport middleware
+app.use(passport.initialize());
+// Passport config
+require("./config/passport")(passport);
+
 app.use('/api', gameRouter)
-app.use(userRouter)
+app.use('/api/users', userRouter)
 
 app.listen(Port, () => console.log(`Server running on port ${Port}`))
