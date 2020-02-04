@@ -14,7 +14,7 @@ function SearchForm(props) {
           list="breeds"
           type="text"
           className="form-control"
-          placeholder="Type in a dog breed to begin"
+          placeholder="Type in Game Here"
           id="breed"
         />
         <datalist id="breeds">
