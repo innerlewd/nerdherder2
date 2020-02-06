@@ -4,6 +4,7 @@ import Discover from "./pages/Discover";
 import About from "./pages/About";
 import Search from "./pages/Search";
 import Navbar from "./components/Navbar";
+import Landing from "./components/Landing";
 import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
 import { GamesList, UserInfo, Registration, Login } from './pages/pages';
@@ -13,6 +14,7 @@ function App() {
     <Router>
       <div>
         <Navbar />
+        <Landing />
         <Wrapper>
           <Route exact path="/" component={Login} />
           <Route exact path="/about" component={About} />
