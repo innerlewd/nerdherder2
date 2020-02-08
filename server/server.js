@@ -3,7 +3,17 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const axios = require('axios')
 const fs = require('fs')
+const http = require(“http”).Server(app)
+const io = require(“socket.io”);
+const port = 500;
+const socket = io(http);
 
+socket.on(“connection”, (socket) => {
+    console.log(“user connected”);
+});
+http.listen(port, () => {
+    console.log(“connected to port: ”+ port)
+});
 
 
 const db = require('./data/db')
