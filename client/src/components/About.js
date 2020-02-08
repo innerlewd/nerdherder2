@@ -8,7 +8,7 @@ import Col from "./Col";
 function About() {
   return (
     <div>
-      <Hero backgroundImage="https://media.newyorker.com/photos/5ddea430de817400084a1dfb/master/pass/2019-Parkin-VideoGames.gif">
+      <Hero>
         <h1>Nerd Up</h1>
         <h2>Where it's Cool to be a Nerd</h2>
       </Hero>
