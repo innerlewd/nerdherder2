@@ -68,64 +68,126 @@
 //   }
 // }
 
+
 // export default Discover;
 
 
 
+
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+// import axios from 'axios';
+import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
+import Hero from "./Hero";
 
 
-const useStyles = makeStyles({
-  card: {
-    maxWidth: 345,
+
+const useStyles = makeStyles(theme => ({
+  icon: {
+    marginRight: theme.spacing(2),
   },
-});
+  heroContent: {
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(8, 0, 6),
+  },
+  heroButtons: {
+    marginTop: theme.spacing(4),
+  },
+  cardGrid: {
+    paddingTop: theme.spacing(8),
+    paddingBottom: theme.spacing(8),
+  },
+  card: {
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  cardMedia: {
+    paddingTop: '56.25%', // 16:9
+  },
+  cardContent: {
+    flexGrow: 1,
+  },
+  footer: {
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(6),
+  },
+}));
 
-export default function ImgMediaCard() {
-  
+const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+export default function Album() {
   const classes = useStyles();
 
   return (
-
-    
-    <Card className={classes.card}>
+    <React.Fragment>
+      <CssBaseline />
+     
+      <Hero backgroundImage="https://media.newyorker.com/photos/5ddea430de817400084a1dfb/master/pass/2019-Parkin-VideoGames.gif">
+        <h1>Nerd Up</h1>
+        {/* <h2>Where it's Cool to be a Nerd</h2> */}
+        <p>
+            Welcome to Nerd Up™ The place where you can embrace your inner-nerd. Check out news on the trending videom games, and ask the community for tips,tricks, or help. 
+        </p>
+      <p>Get Your Nerd On!</p>
+      </Hero>
       
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          alt="Contemplative Reptile"
-          height="140"
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
-      </CardActions>
-    </Card>
+      <main>
+        <Container className={classes.cardGrid} maxWidth="md">
+         
+          <Grid container spacing={4}>
+            {cards.map(card => (
+              <Grid item key={card} xs={12} sm={6} md={4}>
+                <Card className={classes.card}>
+                  <CardMedia
+                    className={classes.cardMedia}
+                    image="https://source.unsplash.com/random"
+                    title="Image title"
+                  />
+                  <CardContent className={classes.cardContent}>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      Heading
+                    </Typography>
+                    <Typography>
+                      This is a media card. You can use this section to describe the content.
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button size="small" color="primary">
+                      View
+                    </Button>
+                    <Button size="small" color="primary">
+                      Edit
+                    </Button>
+                  </CardActions>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </main>
     
+    </React.Fragment>
   );
-  
 }
+
+// function App(){
+//   const [books, setBooks] = . useState(null);
+//   const apiURL = "https://www.anapioficeandfire.com/api/books?pageSize=30";
+//   const fetchData = async () => {
+//       const response = await axios.get(apiURL)
+//       setBooks(response.data) 
+//   }
+//   return (
+//       // returned JSX here
+//   )
+// }
+
