@@ -3,19 +3,20 @@ import Hero from "./Hero";
 import Container from "./Container";
 import Row from "./Row";
 import Col from "./Col";
+import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink, MDBContainer, MDBMask, MDBView } from 'mdbreact';
 
 
 function About() {
   return (
     <div>
-      <Hero backgroundImage="https://media.newyorker.com/photos/5ddea430de817400084a1dfb/master/pass/2019-Parkin-VideoGames.gif">
-        <h1>Nerd Up</h1>
-        {/* <h2>Where it's Cool to be a Nerd</h2> */}
-        <p>
-            Welcome to Nerd Up™ The place where you can embrace your inner-nerd. Check out news on the trending videom games, and ask the community for tips,tricks, or help. 
-        </p>
-      <p>Get Your Nerd On!</p>
-      </Hero>
+      <MDBView src="https://media.newyorker.com/photos/5ddea430de817400084a1dfb/master/pass/2019-Parkin-VideoGames.gif">
+            <MDBMask overlay="purple-light" className="flex-center flex-column text-white text-center">
+              <h2>Welcome to Neasdasdrd Up!</h2>
+              <h5>Welcome to Nerd Up™ The place where you can embrace your inner-nerd. Check out news on the trending video games, and ask the community for tips, tricks, or help.</h5>
+              <p>Check out news on the trending video games, and ask the community for tips, tricks, or help.</p>
+              <p>To get started scroll down and log in and/or register! </p><br />
+            </MDBMask>
+          </MDBView>
       <Container style={{ marginTop: 30 }}>
         <Row>
           <Col size="md-12">
