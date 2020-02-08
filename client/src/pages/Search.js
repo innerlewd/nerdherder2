@@ -42,18 +42,19 @@ class Search extends Component {
       <div>
         <Hero backgroundImage="https://media.newyorker.com/photos/5ddea430de817400084a1dfb/master/pass/2019-Parkin-VideoGames.gif">
         <h1>Nerd Up</h1>
-        <h2>Where it's Cool to be a Nerd</h2>
-      </Hero>
-        
-        <Container style={{ minHeight: "80%" }}>
-          <h1 className="text-center">Search By Title</h1>
-          
-          <SearchForm
+        {/* <h2>Where it's Cool to be a Nerd</h2> */}
+        <SearchForm
             handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
             games={this.state.games}
           />
           <SearchResults results={this.state.results} />
+      </Hero>
+        
+        <Container style={{ minHeight: "80%" }}>
+          
+          
+          
         </Container>
       </div>
     );
