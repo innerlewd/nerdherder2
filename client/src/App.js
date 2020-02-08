@@ -7,12 +7,17 @@ import Navbar from "./components/Navbar";
 
 import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
+
 import axios from "axios";
 import '@fortawesome/fontawesome-free/css/all.min.css'; 
 import 'bootstrap-css-only/css/bootstrap.min.css'; 
 import 'mdbreact/dist/css/mdb.css';
 
 import { GamesList, UserInfo, Registration, Login } from './pages/pages';
+
+
+
+
 
 function App() {
   return (
