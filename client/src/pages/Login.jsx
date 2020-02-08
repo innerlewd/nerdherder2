@@ -35,9 +35,13 @@ class Login extends Component {
                      />
                    <br/>
                    <RaisedButton label="Submit" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
+                   <h1>Welcome to Nerd Up™ The place where you can embrace your inner-nerd. Check out news on the trending videom games, and ask the community for tips,tricks, or help. 
+</h1>
+                   
                </div>
                </MuiThemeProvider>
             </div>
+           
           );
         }
       }
