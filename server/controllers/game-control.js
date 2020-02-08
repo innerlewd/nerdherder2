@@ -1,12 +1,12 @@
 const Game = require('../models/games')
 
-createGame = (req, res) => {
+addGameToList = (req, res) => {
     const body = req.body
 
     if (!body) {
         return res.status(400).json({
             success: false,
-            error: 'You must provide a game',
+            error: 'Game not added to list',
         })
     }
 
@@ -22,13 +22,13 @@ createGame = (req, res) => {
             return res.status(201).json({
                 success: true,
                 id: game._id,
-                message: 'Game created!',
+                message: 'Game saved!',
             })
         })
         .catch(error => {
             return res.status(400).json({
                 error,
-                message: 'Game not created!',
+                message: 'Game not saved!',
             })
         })
 }
@@ -71,7 +71,7 @@ updateGame = async (req, res) => {
     })
 }
 
-deleteGame = async (req, res) => {
+deleteGameFromList = async (req, res) => {
     await Game.findOneAndDelete({ _id: req.params.id }, (err, game) => {
         if (err) {
             return res.status(400).json({ success: false, error: err })
@@ -102,7 +102,7 @@ getGameById = async (req, res) => {
     }).catch(err => console.log(err))
 }
 
-getGames = async (req, res) => {
+getMyGames = async (req, res) => {
     await Game.find({}, (err, games) => {
         if (err) {
             return res.status(400).json({ success: false, error: err })
@@ -110,16 +110,16 @@ getGames = async (req, res) => {
         if (!games.length) {
             return res
                 .status(404)
-                .json({ success: false, error: `Game not found` })
+                .json({ success: false, error: `Games not found` })
         }
         return res.status(200).json({ success: true, data: games })
     }).catch(err => console.log(err))
 }
 
 module.exports = {
-    createGame,
+    addGameToList,
     updateGame,
-    deleteGame,
-    getGames,
+    deleteGameFromList,
+    getMyGames,
     getGameById,
 }
