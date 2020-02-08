@@ -1,6 +1,7 @@
 import React from 'react';
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink, MDBContainer, MDBMask, MDBView } from 'mdbreact';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -56,6 +57,29 @@ class Navbar extends React.Component {
               <h5>Welcome to Nerd Up™ The place where you can embrace your inner-nerd. Check out news on the trending video games, and ask the community for tips, tricks, or help.</h5>
               <p>Check out news on the trending video games, and ask the community for tips, tricks, or help.</p>
               <p>To get started scroll down and log in and/or register! </p><br />
+            
+              <Link
+                to="/register"
+                style={{
+                  width: "140px",
+                  borderRadius: "3px",
+                  letterSpacing: "1.5px"
+                }}
+                className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+              >
+                Register
+              </Link>
+              <Link
+                to="/login"
+                style={{
+                  width: "140px",
+                  borderRadius: "3px",
+                  letterSpacing: "1.5px"
+                }}
+                className="btn btn-large btn-flat waves-effect white black-text"
+              >
+                Log In
+              </Link>
             </MDBMask>
           </MDBView>
         </header>

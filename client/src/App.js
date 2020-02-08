@@ -4,6 +4,7 @@ import Discover from "./components/Discover";
 import About from "./components/About";
 import Search from "./pages/Search";
 import Navbar from "./components/Navbar";
+import Landing from './components/Landing';
 
 import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
@@ -23,19 +24,18 @@ function App() {
   return (
     
     <Router>
-      <div>
+      <div className="App">
         <Navbar />
+        {/* <Landing /> */}
         
-        <Wrapper>
-          <Route exact path="/" component={Login} />
+          {/* <Route exact path="/" component={Landing} /> */}
           <Route exact path="/about" component={About} />
           <Route exact path="/discover" component={Discover} />
           <Route exact path="/search" component={Search} />
-          <Route path='/user/:id' component={UserInfo} />
-          <Route path='/register' component={Registration} />
-          <Route path='/games/list' component={GamesList} />
-          <Route path='/logout' component={Login} />
-        </Wrapper>
+          <Route exact path='/user/:id' component={UserInfo} />
+          <Route exact path='/register' component={Registration} />
+          <Route exact path='/games/list' component={GamesList} />
+          <Route exact path='/login' component={Login} />
         <Footer />
       </div>
     </Router>
