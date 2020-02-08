@@ -1,8 +1,41 @@
 import axios from "axios";
+require('dotenv').config();
+
+axios({
+  "method":"GET",
+  "url":"https://rawg-video-games-database.p.rapidapi.com/games",
+  "headers":{
+  "content-type":"application/octet-stream",
+  "x-rapidapi-host":"rawg-video-games-database.p.rapidapi.com",
+  "x-rapidapi-key":"43acb27062msh71014d2b6f89ea0p19fc0bjsn4d672d238f0f"
+  }
+  })
+  .then((response)=>{
+    console.log(response.data.results)
+  })
+  .catch((error)=>{
+    console.log(error)
+  })
+
+
+// // Export an object containing methods we'll use for accessing the Dog.Ceo API
+
+// export default {
+//   getRandomDog: function() {
+//     return axios.get("");
+//   },
+//   getDogsOfBreed: function(breed) {
+//     return axios.get("");
+//   },
+//   getBaseBreedsList: function() {
+//     return axios.get("");
+var keys = require("./Keys")
+var giantbombApiKey = keys.giantbomb;
 
 const api = axios.create({
   baseURL: 'http://localhost:8000/api'
 })
+
 
 export const addGameToList = payload => api.post(`/game`, payload)
 export const getMyGames = () => api.get(`/games`)
@@ -16,6 +49,15 @@ export const updateUser = (id, payload) => api.put(`/user/${id}`, payload)
 export const deleteUser = id => api.delete(`/user/${id}`)
 export const getUserById = id => api.get(`/user/${id}`)
 
+export const getAllGames = () => axios.get("https://www.giantbomb.com/api/genres/?api_key=" + giantbombApiKey, function (err, res, body) {
+  let games = JSON.parse(body)
+  if (games.length > 2) {}
+
+  if (!err && res.statusCode === 200) {
+    console.log('working', games)
+  }
+})
+
 const apis = {
   addGameToList,
   getMyGames,
@@ -26,7 +68,8 @@ const apis = {
   getUsers,
   updateUser,
   deleteUser,
-  getUserById
+  getUserById,
+  getAllGames
 }
 
 // Export an object containing methods we'll use for accessing the Dog.Ceo API

@@ -1,3 +1,18 @@
 nav.navbar.navbar-default {
   margin-bottom: 0;
+  position: sticky;
+  color: var(--tron-blue);
+  background-color: black;
+  top: 0px;
+  opacity: 0.8;
+  z-index: 8;
+}
+
+#search-bar {
+  position: sticky;
+  color: var(--tron-blue);
+  background-color: black;
+  top: 0px;
+  opacity: 0.8;
+  z-index: 8;
 }

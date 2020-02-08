@@ -1,14 +1,15 @@
 import React from "react";
-import Hero from "../components/Hero";
-import Container from "../components/Container";
-import Row from "../components/Row";
-import Col from "../components/Col";
+import Hero from "./Hero";
+import Container from "./Container";
+import Row from "./Row";
+import Col from "./Col";
+
 
 function About() {
   return (
     <div>
       <Hero backgroundImage="https://media.newyorker.com/photos/5ddea430de817400084a1dfb/master/pass/2019-Parkin-VideoGames.gif">
-        <h1>Nerd Herder</h1>
+        <h1>Nerd Up</h1>
         <h2>Where it's Cool to be a Nerd</h2>
       </Hero>
       <Container style={{ marginTop: 30 }}>

@@ -10,22 +10,7 @@ createUser = function (req, res) {
             error: 'all fields required'
         })
     }
-    // const passwordBody = req.body.password
-
-    // if (!passwordBody) {
-    //     return res.status(400).json({
-    //         success: false,
-    //         error: 'You must provide a password'
-    //     })
-    // }
-    // const emailBody = req.body.email
-
-    // if (!emailBody) {
-    //     return res.status(400).json({
-    //         success: false,
-    //         error: 'You must provide an email'
-    //     })
-    // }
+    
     const user = new User(body)
 
     if (!user) {
