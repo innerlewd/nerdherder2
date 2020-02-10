@@ -5,6 +5,7 @@ const axios = require('axios')
 const fs = require('fs')
 const mongoose = require('mongoose')
 const passport = require('passport')
+const path = require('path')
 
 
 
@@ -35,18 +36,18 @@ mongoose
 
 app.get('/')
 
-app.get('/logout',function(req,res){    
-    req.session.destroy(function(err){  
-        if(err){  
-            console.log(err);  
-        }  
-        else  
-        {  
-            res.redirect('/');  
-        }  
-    });  
+// app.get('/logout',function(req,res){    
+//     req.session.destroy(function(err){  
+//         if(err){  
+//             console.log(err);  
+//         }  
+//         else  
+//         {  
+//             res.redirect('/');  
+//         }  
+//     });  
 
-});  
+// });  
 
 // Passport middleware
 app.use(passport.initialize());
@@ -55,5 +56,14 @@ require("./config/passport")(passport);
 
 app.use('/api', gameRouter)
 app.use('/api/users', userRouter)
+
+//serve static assets if in production
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+  });
+}
 
 app.listen(Port, () => console.log(`Server running on port ${Port}`))
