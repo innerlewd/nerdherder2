@@ -1,5 +1,5 @@
-import React from "react";
-import {BrowserRouter as Router,Route} from "react-router-dom";
+import React, { Component } from "react";
+import {BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Discover from "./components/Discover";
 import About from "./components/About";
 import Search from "./pages/Search";
@@ -20,7 +20,8 @@ import { GamesList, UserInfo, Registration, Login } from './pages/pages';
 
 
 
-function App() {
+class App extends React.Component {
+  render() {
   return (
     
     <Router>
@@ -41,6 +42,7 @@ function App() {
     </Router>
 
   );
+}
 }
 
 
