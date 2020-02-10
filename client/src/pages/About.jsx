@@ -1,8 +1,8 @@
 import React from "react";
-import Hero from "./Hero";
-import Container from "./Container";
-import Row from "./Row";
-import Col from "./Col";
+import Hero from "../components/Hero";
+import Container from "../components/Container";
+import Row from "../components/Row";
+import Col from "../components/Col";
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink, MDBContainer, MDBMask, MDBView } from 'mdbreact';
 
 
@@ -11,7 +11,7 @@ function About() {
     <div>
       <MDBView src="https://media.newyorker.com/photos/5ddea430de817400084a1dfb/master/pass/2019-Parkin-VideoGames.gif">
             <MDBMask overlay="purple-light" className="flex-center flex-column text-white text-center">
-              <h2>Welcome to Neasdasdrd Up!</h2>
+              <h2>Welcome to Nerd Up!</h2>
               <h5>Welcome to Nerd Up™ The place where you can embrace your inner-nerd. Check out news on the trending video games, and ask the community for tips, tricks, or help.</h5>
               <p>Check out news on the trending video games, and ask the community for tips, tricks, or help.</p>
               <p>To get started scroll down and log in and/or register! </p><br />
