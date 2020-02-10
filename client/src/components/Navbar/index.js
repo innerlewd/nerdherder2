@@ -28,7 +28,7 @@ class Navbar extends React.Component {
               <MDBNavbarBrand href="/">
                 <strong>Nerd Up</strong>
               </MDBNavbarBrand>
-              {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
+              {!this.state.isWideEnough && <MDBNavbarToggler color="#d3531a" onClick={this.onClick} />}
               <MDBCollapse isOpen={this.state.collapse} navbar>
                 <MDBNavbarNav left>
                   <MDBNavItem active>
@@ -57,7 +57,7 @@ class Navbar extends React.Component {
               <h5>Welcome to Nerd Up™ The place where you can embrace your inner-nerd. Check out news on the trending video games, and ask the community for tips, tricks, or help.</h5>
               <p>Check out news on the trending video games, and ask the community for tips, tricks, or help.</p>
               <p>To get started scroll down and log in and/or register! </p><br />
-            
+
               <Link
                 to="/register"
                 style={{
