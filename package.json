@@ -2,7 +2,7 @@
   "name": "nerdherder2",
   "version": "1.0.0",
   "description": "backend for nerdherder2",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "client-install": "npm install --prefix client",
     "start": "node server.js",
