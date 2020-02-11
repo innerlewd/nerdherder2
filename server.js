@@ -14,7 +14,7 @@ const gameRouter = require('./routes/game-router')
 const userRouter = require('./routes/user-router')
 
 const app = express()
-const Port = 5000 || process.env.PORT
+const Port = process.env.PORT || 5000
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cors())
