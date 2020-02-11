@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "backend for nerdherder2",
   "main": "server.js",
+  "engines": {
+    "node": "13.1.0"
+  },
   "scripts": {
     "client-install": "npm install --prefix client",
     "start": "node server.js",
