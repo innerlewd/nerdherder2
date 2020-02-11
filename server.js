@@ -16,7 +16,7 @@ const userRouter = require('./routes/user-router')
 const app = express()
 const Port = 5000 || process.env.PORT
 
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cors())
 app.use(bodyParser.json())
 
@@ -53,7 +53,7 @@ app.use(passport.initialize());
 // Passport config
 require("./config/passport")(passport);
 
-app.use('/api', gameRouter)
+app.use('/api/games', gameRouter)
 app.use('/api/users', userRouter)
 
 //serve static assets if in production
