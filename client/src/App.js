@@ -5,6 +5,10 @@ import About from "./pages/About";
 import Search from "./pages/Search";
 import Navbar from "./components/Navbar";
 import Landing from './components/Landing';
+import Launcher from './components/Launcher';
+import PopupWindow from './components/popups/PopupWindow';
+
+
 
 import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
@@ -36,6 +40,7 @@ function App() {
         <Route exact path='/register' component={Registration} />
         <Route exact path='/games/list' component={GamesList} />
         <Route exact path='/login' component={Login} />
+        <Route path='/' component={Launcher} />
         <Footer />
       </div>
     </Router>
@@ -50,3 +55,5 @@ function App() {
 
 
 export default App;
+
+

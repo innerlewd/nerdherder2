@@ -1,10 +1,15 @@
 const express = require('express')
+const app = express()
+const http = require('http').Server(app)
+const path = require('path')
+const io = require('socket.io')(http);
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const axios = require('axios')
 const fs = require('fs')
 const mongoose = require('mongoose')
 const passport = require('passport')
+const uri = process.env.MONGODB_URI;
 
 
 
@@ -12,8 +17,9 @@ const db = require("./config/keys").mongoURI;
 const gameRouter = require('./routes/game-router')
 const userRouter = require('./routes/user-router')
 
-const app = express()
-const Port = 5000 || process.env.PORT
+
+const Port = 3000 || process.env.PORT
+const port = 5000 || process.env.PORT
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors())
