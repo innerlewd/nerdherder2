@@ -130,15 +130,7 @@ export default function Album() {
   return (
     <React.Fragment>
       <CssBaseline />
-     
-      <Hero backgroundImage="https://media.newyorker.com/photos/5ddea430de817400084a1dfb/master/pass/2019-Parkin-VideoGames.gif">
-        <h1>Nerd Up</h1>
-        {/* <h2>Where it's Cool to be a Nerd</h2> */}
-        <p>
-            Welcome to Nerd Up™ The place where you can embrace your inner-nerd. Check out news on the trending videom games, and ask the community for tips,tricks, or help. 
-        </p>
-      <p>Get Your Nerd On!</p>
-      </Hero>
+    
       
       <main>
         <Container className={classes.cardGrid} maxWidth="md">

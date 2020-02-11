@@ -2,13 +2,17 @@ import React, { Component } from "react";
 import {BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Discover from "./pages/Discover";
 import About from "./pages/About";
-import Search from "./pages/Search";
+import Search from "./components/Search";
 import Navbar from "./components/Navbar";
 import Landing from './components/Landing';
 import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
+import CookieBar from './components/cookieBar';
+import Homepage from './components/HomePage';
+import Videogame from './components/Videogame';
+
 
 import '@fortawesome/fontawesome-free/css/all.min.css'; 
 import 'bootstrap-css-only/css/bootstrap.min.css'; 
@@ -17,7 +21,7 @@ import 'mdbreact/dist/css/mdb.css';
 import { Provider } from "react-redux";
 import store from "./store";
 
-import { GamesList, UserInfo, Register, Login } from './pages/pages';
+import { UserInfo, Register, Login } from './pages/pages';
 
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
@@ -48,16 +52,18 @@ class App extends React.Component {
     <Router>
       <div className="App">
         <Navbar />
+        <CookieBar />
         <Landing />
         
-          {/* <Route exact path="/" component={Landing} /> */}
+          <Route exact path="/" component={Homepage} />
           <Route exact path="/about" component={About} />
           <Route exact path="/discover" component={Discover} />
           <Route exact path="/search" component={Search} />
           <Route exact path='/user/:id' component={UserInfo} />
           <Route exact path='/register' component={Register} />
-          <Route exact path='/games/list' component={GamesList} />
+          {/* <Route exact path='/games/list' component={GamesList} /> */}
           <Route exact path='/login' component={Login} />
+          <Route path='/videogame/:id' component={Videogame} />
           <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
