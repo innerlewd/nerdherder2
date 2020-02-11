@@ -7,11 +7,12 @@ import Navbar from "./components/Navbar";
 import Landing from './components/Landing';
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
-
+import { Widget, addResponseMessage, addLinkSnippet, addUserMessage } from 'react-chat-widget';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
-
+import './components/react-chat-widget/lib/index.css'
+import Icon from './components/Icon/index'
 import { Provider } from "react-redux";
 import store from "./store";
 
@@ -47,6 +48,11 @@ class App extends React.Component {
           <div>
             <Navbar />
             <Landing />
+            <Widget
+              handleNewUserMessage={this.handleNewUserMessage}
+              profileAvatar={Icon}
+              title="My new awesome title"
+              subtitle="And my cool subtitle" />
 
             {/* <Route exact path="/" component={Landing} /> */}
             <Switch>
@@ -57,7 +63,6 @@ class App extends React.Component {
               <Route exact path='/register' component={Register} />
               <Route exact path='/games/list' component={GamesList} />
               <Route exact path='/login' component={Login} />
-
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
 
