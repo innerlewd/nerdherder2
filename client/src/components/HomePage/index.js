@@ -27,8 +27,8 @@ class Homepage extends Component {
   getRawgApi = async () => {
     try {
       const response = await fetch('/api/trending')
-      const json = await response.json()
       this.setState({ data: json, dataIsReady: true })
+      const json = await response.json()
     } catch (e) {
       console.error(e)
     }
