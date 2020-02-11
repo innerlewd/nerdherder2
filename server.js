@@ -13,9 +13,7 @@ const userAgent = { 'User-Agent': 'Nerd Up' }
 
 
 
-const db = require("./config/keys").mongoURI;
-const gameRouter = require('./routes/game-router')
-const userRouter = require('./routes/user-router')
+
 
 
 
@@ -29,6 +27,9 @@ const userRouter = require('./routes/user-router')
       app.use(bodyParser.urlencoded({ extended: false }))
       app.use(cors())
       app.use(bodyParser.json())
+      const db = require("./config/keys").mongoURI;
+      const gameRouter = require('./routes/game-router')
+      const userRouter = require('./routes/user-router')
       mongoose
       .connect(
       db,
