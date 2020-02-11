@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import Discover from "./pages/Discover";
 import About from "./pages/About";
 import Search from "./components/Search";
@@ -45,7 +45,13 @@ if (localStorage.jwtToken) {
     window.location.href = "./login";
   }
 }
+
+
 class App extends React.Component {
+
+   
+  
+
   render() {
   return (
     <Provider store={store}>
@@ -54,9 +60,9 @@ class App extends React.Component {
         <Navbar />
         <CookieBar />
         <Landing />
-        
-          <Route exact path="/" component={Homepage} />
-          <Route exact path="/about" component={About} />
+        <Switch>
+          <Route exact path="/" component={()=><Homepage/>} />
+          <Route exact path="/about" component={()=><About/>} />
           <Route exact path="/discover" component={Discover} />
           <Route exact path="/search" component={Search} />
           <Route exact path='/user/:id' component={UserInfo} />
@@ -64,9 +70,9 @@ class App extends React.Component {
           {/* <Route exact path='/games/list' component={GamesList} /> */}
           <Route exact path='/login' component={Login} />
           <Route path='/videogame/:id' component={Videogame} />
-          <Switch>
+          
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
-            </Switch>
+        </Switch>
         <Footer />
       </div>
     </Router>

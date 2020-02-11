@@ -8,6 +8,7 @@ import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse,
 
 function About() {
   return (
+    
     <div>
       <Container style={{ marginTop: 30 }}>
         <Row>

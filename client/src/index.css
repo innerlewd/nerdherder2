@@ -10,5 +10,6 @@ div[data-reactroot] {
   height: 100%;
   padding: 0;
   margin: 0;
-  background-color:rgb(36, 172, 218);
+  background-color: rgb(33,33,33);
+  color: white;
 }
