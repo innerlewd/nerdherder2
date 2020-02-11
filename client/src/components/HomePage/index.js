@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Trending from '../Trending'
+import Trending from '../homepageTrending'
 import SkeletonLoad from '../homepageSkeletonLoad'
 
 class Homepage extends Component {
