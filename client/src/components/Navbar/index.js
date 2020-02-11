@@ -1,7 +1,5 @@
 import React from 'react';
-import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink, MDBContainer, MDBMask, MDBView } from 'mdbreact';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -21,6 +19,7 @@ class Navbar extends React.Component {
 
   render() {
     return (
+<<<<<<< HEAD
       <div>
         <header>
           <Router>
@@ -96,48 +95,35 @@ class Navbar extends React.Component {
 
 
 
+=======
+    
+         
+< nav class="navbar navbar-expand-lg navbar-dark primary-color" >
+  
+  <a class="navbar-brand" href="/">Nerd Up</a>
+                <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/About">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/Discover">Discover</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/Profile">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/Search">Search</a>
+      </li>
+      </ul>
+              </nav>)
+               ;
+              }}
+  
+>>>>>>> c2219f9e757c123f68889d4971c8318a2c036841
 export default Navbar;
-// import React from "react";
-// import { BrowserRouter } from 'react-router-dom';
-// import { MDBNav, MDBNavItem, MDBNavLink } from "mdbreact";
-
-// export default () => (
-//   <BrowserRouter>
-
-//     <MDBNav>
-//       <MDBNavItem>
-//         <MDBNavLink active to="/">Nerd Up</MDBNavLink>
-//       </MDBNavItem>
-//       <MDBNavItem>
-//         <MDBNavLink to="/About">About</MDBNavLink>
-//       </MDBNavItem>
-//       <MDBNavItem>
-//         <MDBNavLink to="/Discover">Discover</MDBNavLink>
-//       </MDBNavItem>
-//       <MDBNavItem>
-//         <MDBNavLink to="/Search">Search</MDBNavLink>
-//       </MDBNavItem>
-//     </MDBNav>
-
-//   </BrowserRouter>
-// );
-
-// import React, { Component } from "react";
-// import Navbar from 'react-bootstrap/Navbar'
-// class Navbar extends Component {
-//   render() {
-//     return (
-//       <Navbar>
-//       <Navbar.Brand href="/">Navbar with text</Navbar.Brand>
-//       <Navbar.Toggle />
-//       <Navbar.Collapse className="justify-content-end">
-//       <Navbar.Text>
-//         Signed in as: <a href="#login">Mark Otto</a>
-//       </Navbar.Text>
-//         </Navbar.Collapse>
-// </Navbar>
-//     );
-//   }
-// }
-// export default Navbar;
 
