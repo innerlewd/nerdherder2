@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Trending from '../homepageTrending'
 import SkeletonLoad from '../homepageSkeletonLoad'
-
+import axios from 'axios'
 class Homepage extends Component {
   state = {
     data: null,
@@ -22,12 +22,14 @@ class Homepage extends Component {
 
   componentDidMount() {
     this.getRawgApi()
+    
   }
-
+  
   getRawgApi = async () => {
     try {
       const response = await fetch('/api/trending')
       this.setState({ data: json, dataIsReady: true })
+      console.log(response.data)
       const json = await response.json()
     } catch (e) {
       console.error(e)
