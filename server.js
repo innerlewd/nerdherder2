@@ -34,7 +34,6 @@ mongoose
 
 
 
-app.get('/')
 
 // app.get('/logout',function(req,res){    
 //     req.session.destroy(function(err){  
