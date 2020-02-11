@@ -12,6 +12,80 @@ const oneyPlays = require('oneyplays-api')
 const userAgent = { 'User-Agent': 'Nerd Up' }
 
 
+const optionsTrending = {
+  method: 'GET',
+  headers: userAgent,
+  url: 'https://api.rawg.io/api/games/lists/main',
+  qs: {
+    ordering: '-relevance',
+    discover: true,
+    page_size: 10
+  }
+}
+
+const optionsTopRatedRecommended = {
+  method: 'GET',
+  headers: userAgent,
+  url: 'https://api.rawg.io/api/games',
+  qs: {
+    ordering: '-added',
+    page_size: 10
+  }
+}
+
+const optionsVideogame = {
+  method: 'GET',
+  headers: userAgent,
+  url: undefined
+}
+
+const optionsVideogameAutocomplete = {
+  method: 'GET',
+  headers: userAgent,
+  url: 'https://api.rawg.io/api/games',
+  qs: {
+    search: undefined
+  }
+}
+
+const optionsSearchArchive = {
+  method: 'GET',
+  headers: userAgent,
+  url: 'https://archive.org/advancedsearch.php',
+  qs: {
+    q: undefined,
+    rows: '5',
+    page: '1',
+    output: 'json',
+    'fl[]': 'identifier',
+    'sort[]': 'downloads desc'
+  }
+}
+
+let parsedResult
+
+async function apiCall(options) {
+  // (I.) promise to return the parsedResult for processing
+  function rawgRequest() {
+    return new Promise(function(resolve, reject) {
+      request(options, function(error, response, body) {
+        try {
+          resolve(JSON.parse(body))
+        } catch (e) {
+          reject(e)
+        }
+      })
+    })
+  }
+
+  // (II.)
+  try {
+    parsedResult = await rawgRequest()
+  } catch (e) {
+    console.error(e)
+  }
+  return parsedResult
+}
 
 
 
