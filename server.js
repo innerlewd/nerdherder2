@@ -17,8 +17,6 @@ const db = require("./config/keys").mongoURI;
 const gameRouter = require('./routes/game-router')
 const userRouter = require('./routes/user-router')
 
-const app = express()
-const Port = process.env.PORT || 5000
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cors())
