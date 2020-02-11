@@ -18,15 +18,17 @@ const gameRouter = require('./routes/game-router')
 const userRouter = require('./routes/user-router')
 
 
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(cors())
-app.use(bodyParser.json())
 
 
   function endpointCreation() {
     try {
+
       const app = express()
       const port = process.env.PORT || 5000
+      
+      app.use(bodyParser.urlencoded({ extended: false }))
+      app.use(cors())
+      app.use(bodyParser.json())
       mongoose
       .connect(
       db,
