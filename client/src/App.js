@@ -50,7 +50,7 @@ class App extends React.Component {
   return (
     <Provider store={store}>
     <Router>
-      <div className="App">
+      <div>
         <Navbar />
         <CookieBar />
         <Landing />
