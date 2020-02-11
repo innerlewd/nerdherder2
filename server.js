@@ -28,9 +28,9 @@ mongoose
   .then(() => console.log("MongoDB successfully connected"))
   .catch(err => console.log(err));
 
-// app.get('/', (req, res) => {
-//     fs.readFile('../client/src/index.js')
-// })
+app.get('/', (req, res) => {
+    fs.readFile('../client/src/index.js')
+})
 
 
 
