@@ -47,14 +47,6 @@ class App extends React.Component {
         <Router>
           <div>
             <Navbar />
-            <Landing />
-            <Widget
-              handleNewUserMessage={this.handleNewUserMessage}
-              profileAvatar={Icon}
-              title="My new awesome title"
-              subtitle="And my cool subtitle" />
-
-            {/* <Route exact path="/" component={Landing} /> */}
             <Switch>
               <Route exact path="/about" component={About} />
               <Route exact path="/discover" component={Discover} />
@@ -65,6 +57,13 @@ class App extends React.Component {
               <Route exact path='/login' component={Login} />
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
+
+            <Landing />
+            <Widget
+              handleNewUserMessage={this.handleNewUserMessage}
+              profileAvatar={Icon}
+              title="NERDWORDS"
+              subtitle="ask other nerds anything you want" />
 
           </div>
         </Router>
