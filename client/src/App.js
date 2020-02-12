@@ -69,7 +69,7 @@ class App extends React.Component {
               <Route exact path='/register' component={Register} />
               {/* <Route exact path='/games/list' component={GamesList} /> */}
               <Route exact path='/login' component={Login} />
-              <Route exact path='/videogame:id/' component={Videogame} />
+              <Route exact path='/videogame/:id' component={Videogame} />
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
 
