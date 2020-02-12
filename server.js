@@ -21,6 +21,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
       const db = require("./config/keys").mongoURI;
       const gameRouter = require('./routes/game-router')
       const userRouter = require('./routes/user-router')
+      app.use('/api', gameRouter)
+      app.use('/api/users', userRouter)
       mongoose
       .connect(
       db,
