@@ -15,6 +15,24 @@ const compression = require('compression')
 const oneyPlays = require('oneyplays-api')
 const userAgent = { 'User-Agent': 'Nerd Up' }
 
+app.use(bodyParser.urlencoded({ extended: false }))
+      app.use(cors())
+      app.use(bodyParser.json())
+      const db = require("./config/keys").mongoURI;
+      const gameRouter = require('./routes/game-router')
+      const userRouter = require('./routes/user-router')
+      mongoose
+      .connect(
+      db,
+      { useNewUrlParser: true }
+      )
+      .then(() => console.log("MongoDB successfully connected"))
+      .catch(err => console.log(err));
+      // Passport middleware
+      app.use(passport.initialize());
+      // Passport config
+      require("./config/passport")(passport);
+
 const optionsTrending = {
   method: 'GET',
   headers: userAgent,
@@ -327,23 +345,23 @@ endpointCreation()
 //       const app = express()
 //       const port = process.env.PORT || 5000
       
-//       app.use(bodyParser.urlencoded({ extended: false }))
-//       app.use(cors())
-//       app.use(bodyParser.json())
-//       const db = require("./config/keys").mongoURI;
-//       const gameRouter = require('./routes/game-router')
-//       const userRouter = require('./routes/user-router')
-//       mongoose
-//       .connect(
-//       db,
-//       { useNewUrlParser: true }
-//       )
-//       .then(() => console.log("MongoDB successfully connected"))
-//       .catch(err => console.log(err));
-//       // Passport middleware
-//       app.use(passport.initialize());
-//       // Passport config
-//       require("./config/passport")(passport);
+      // app.use(bodyParser.urlencoded({ extended: false }))
+      // app.use(cors())
+      // app.use(bodyParser.json())
+      // const db = require("./config/keys").mongoURI;
+      // const gameRouter = require('./routes/game-router')
+      // const userRouter = require('./routes/user-router')
+      // mongoose
+      // .connect(
+      // db,
+      // { useNewUrlParser: true }
+      // )
+      // .then(() => console.log("MongoDB successfully connected"))
+      // .catch(err => console.log(err));
+      // // Passport middleware
+      // app.use(passport.initialize());
+      // // Passport config
+      // require("./config/passport")(passport);
 
 //       app.get('/')
 //       app.use(compression())
