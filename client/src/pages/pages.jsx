@@ -1,6 +1,5 @@
-import GamesList from './GamesList'
-import Registration from './Login'
+import Register from './Register'
 import UserInfo from './UserInfo'
 import Login from './Login'
 
-export { GamesList, Registration, UserInfo, Login }
+export { Register, UserInfo, Login }

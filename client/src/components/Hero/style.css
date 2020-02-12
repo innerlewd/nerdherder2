@@ -3,6 +3,11 @@
   background-size: cover;
   background-position: center;
   position: relative;
+  border-radius: 250px;
+  background-image: "https://media.newyorker.com/photos/5ddea430de817400084a1dfb/master/pass/2019-Parkin-VideoGames.gif";
+  text-align:center;
+  font-size: 40px;
+  color: white;
 }
 
 .hero::after {
