@@ -1,4 +1,8 @@
 const express = require('express')
+const app = express()
+const http = require('http').Server(app)
+const path = require('path')
+const io = require('socket.io')(http);
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const axios = require('axios')
@@ -39,6 +43,7 @@ const optionsVideogame = {
   url: undefined
 }
 
+<<<<<<< HEAD
 const optionsVideogameAutocomplete = {
   method: 'GET',
   headers: userAgent,
@@ -47,6 +52,31 @@ const optionsVideogameAutocomplete = {
     search: undefined
   }
 }
+=======
+const db = require("./config/keys").mongoURI;
+const gameRouter = require('./routes/game-router')
+const userRouter = require('./routes/user-router')
+
+const app = express()
+const Port = process.env.PORT || 5000
+
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(cors())
+app.use(bodyParser.json())
+
+mongoose
+    .connect(
+        db,
+        { useNewUrlParser: true }
+    )
+    .then(() => console.log("MongoDB successfully connected"))
+    .catch(err => console.log(err));
+
+// app.get('/', (req, res) => {
+//     fs.readFile('../client/src/index.js')
+// })
+
+>>>>>>> 25951c4ebee6eec59ecec781b238fe6ca8f68d08
 
 const optionsSearchArchive = {
   method: 'GET',
@@ -91,6 +121,7 @@ async function apiCall(options) {
 
 
 
+<<<<<<< HEAD
 
   function endpointCreation() {
     try {
@@ -242,4 +273,14 @@ async function apiCall(options) {
     }
   }
   endpointCreation()
+=======
+// serve static assets if in production
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
+    });
+}
+>>>>>>> 25951c4ebee6eec59ecec781b238fe6ca8f68d08
 
