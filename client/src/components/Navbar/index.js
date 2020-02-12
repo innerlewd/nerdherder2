@@ -31,7 +31,7 @@ render() {
               <MDBNavLink to="/About">About</MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
-              <MDBNavLink to="/Profile">Profile</MDBNavLink>
+              <MDBNavLink to="/Search">Search</MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
               <MDBDropdown>
@@ -39,7 +39,7 @@ render() {
                   <div className="d-none d-md-inline">More</div>
                 </MDBDropdownToggle>
                 <MDBDropdownMenu className="dropdown-default">
-                  <MDBDropdownItem href="/Search">Search for a game</MDBDropdownItem>
+                  <MDBDropdownItem href="/Profile">Profile</MDBDropdownItem>
                   <MDBDropdownItem href="#!">Another Action</MDBDropdownItem>
                   <MDBDropdownItem href="#!">Something else here</MDBDropdownItem>
                   <MDBDropdownItem href="#!">Something else here</MDBDropdownItem>
